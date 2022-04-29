@@ -5,8 +5,7 @@ const {
   CustomersController
 } = require("../controllers");
 
-//  @route  GET income type with its sources
-
+//  @route GET customers
 router.get("/all", (req, res) => {
   CustomersController.fetchAllCustomers((err, customers) => {
     if (err) {

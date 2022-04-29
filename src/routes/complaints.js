@@ -2,42 +2,32 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  CustomersController
+  ComplaintsController
 } = require("../controllers");
 
-//  @route  GET income type with its sources
-
+//  @route GET complaints
 router.get("/all", (req, res) => {
-  IncomesController.getAllCustomers((err, customers) => {
+  ComplaintsController.fetchAllCustomers((err, complaints) => {
     if (err) {
       res.status(400).json(err);
     } else {
-      res.status(200).json(customers);
+      res.status(200).json(complaints);
     }
   });
 });
 
 router.post("/", (req, res) => {
-  IncomesController.saveCustomer(req.body, (err, customers) => {
+  phone_number = req.body.phone_number;
+  nature = req.body.nature;
+  amount = req.body.amount;
+  transaction_code = req.body.transaction_code;
+  ComplaintsController.saveComplaint(phone_number, nature, amount, transaction_code, (err, complaints) => {
     if (err) {
       res.status(400).json(err);
     } else {
-      res.status(200).json(customers);
+      res.status(200).json(complaints);
     }
   });
-});
-
-router.get("/single", (req, res) => {
-  const phone_number = req.query.phone_number;
-
-  CustomersController.getIncome(phone_number,  (err, income) => {
-      if (err) {
-        res.status(400).json(err);
-      } else {
-        res.status(200).json(income);
-      }
-    }
-  );
 });
 
 module.exports = router;
