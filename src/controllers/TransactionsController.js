@@ -14,6 +14,7 @@ module.exports = {
       })
       .then((customers) => {
           customer_id = customers[0].id;
+          console.log(customer_id)
           Transaction.create({
             customer_id: customer_id,
             nature: nature,

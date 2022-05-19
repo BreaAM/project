@@ -22,7 +22,7 @@ module.exports = {
               });
             } else {
               Customer.create({
-                customer_name: customer_name,
+                name: customer_name,
                 phone_number: phone_number,
                 system: "Safaricom",
                 created_at: new Date(),
