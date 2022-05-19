@@ -1,8 +1,8 @@
 Basic Backend Setup
 ------------------
 1. clone the project
-2. npm install - to install nodemodules packages
-3. npm run server - to run the project
+2. npm install: to install nodemodules packages
+3. npm run server: to run the project
 4. Add config.json file
 
 Setup database and migrations
@@ -25,7 +25,7 @@ Notes
 {
 	"name": "Gakinya Makau",
 	"phone_number": "0723839123"
-    "nature": "DEPOSIT",
+    "nature": 1, #deposit,
     "amount": 200,
     "transaction_code": "COP99832"
 }
@@ -33,8 +33,8 @@ Notes
 4. POST Complaint -  http://locahost:5001/complaints/
 {
 	"name": "Gakinya Makau",
-	"phone_number": "0734839123"
-    "nature": "WITHDRAWAL",
+	"phone_number": "0734839123",
+    "nature": 0, #"WITHDRAWAL",
     "amount": 200,
     "transaction_code": "JAS28332"
 }
